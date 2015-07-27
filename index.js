@@ -77,6 +77,9 @@ crawler.listJobs = function(job, config, cb) {
         if (error) {
             return cb(error);
         }
+        if (!url) {
+            return [];
+        }
         request.get(url, function(error, response, html) {
             if (error) {
                 return cb(error);
