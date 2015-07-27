@@ -16,13 +16,15 @@ var chapterRegExp = /Ch.(\d+(\.\d+)?)/;
 function listChaptersFromHtml(html, job, config) {
     var $ = cheerio.load(html);
 
+    var language = (config.batoto && config.batoto.language || 'english').toLowerCase();
+
     var chapters = $('.chapter_row')
         .filter(function(i, e) {
             return $(e)
                 .attr('class')
                 .toLowerCase()
                 .split(' ')
-                .indexOf('lang_' + config.batoto.language) !== -1;
+                .indexOf('lang_' + language) !== -1;
         })
         .map(function(i, e) {
             var chapterMatch = chapterRegExp.exec($(e).text());
@@ -47,16 +49,6 @@ function listChaptersFromHtml(html, job, config) {
 
     return chapters;
 }
-
-crawler.listJobs = function(job, config, cb) {
-    var url = crawler.seriesNameToUrl(job);
-    request.get(url, function(error, response, html) {
-        if (error) {
-            return cb(error);
-        }
-        return cb(null, listChaptersFromHtml(html, job, config));
-    });
-};
 
 function getSeriesUrlFromSearch(name, cb) {
     var baseUrl = 'http://bato.to';
