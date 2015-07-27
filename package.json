@@ -1,5 +1,5 @@
 {
-  "name": "mangatown-batoto",
+  "name": "batoto-manganese",
   "version": "1.0.0",
   "description": "Manganese plugin for crawling through Batoto",
   "main": "index.js",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jfmengels/mangatown-batoto.git"
+    "url": "git+https://github.com/jfmengels/batoto-manganese.git"
   },
   "keywords": [
     "manganese",
@@ -27,7 +27,7 @@
   "author": "Jeroen Engels <jfm.engels@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jfmengels/mangatown-batoto/issues"
+    "url": "https://github.com/jfmengels/batoto-manganese/issues"
   },
-  "homepage": "https://github.com/jfmengels/mangatown-batoto#readme"
+  "homepage": "https://github.com/jfmengels/batoto-manganese#readme"
 }
